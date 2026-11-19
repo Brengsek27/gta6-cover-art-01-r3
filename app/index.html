@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Studio — Make your own legend</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Neon Coast Studio home"><b class="brand-mark">NC</b><span>NEON COAST <strong>STUDIO</strong></span></a>
+    <span class="manifesto">ORDINARY PHOTOS. <span>EXTRAORDINARY STORIES.</span></span>
+    <span class="privacy"><i></i> LOCAL &amp; PRIVATE <span>/ V.03</span></span>
+  </header>
+  <main class="workspace">
+    <aside class="rail" aria-label="Cover controls">
+      <div class="rail-intro"><span class="eyebrow">THE COVER ART MAKER</span><h1>Your city. Your story.</h1></div>
+      <section class="control-section">
+        <h2><span>01</span> Your scenes <small id="photo-count">4 LOADED</small></h2>
+        <label class="dropzone" id="dropzone" for="upload"><span class="upload-icon">↥</span><strong>Drop your photos here <span>or browse</span></strong><small>JPG, PNG, WEBP · STAYS ON YOUR DEVICE</small><input id="upload" type="file" multiple accept="image/jpeg,image/png,image/webp"></label>
+        <div class="sample-label">OR START WITH A SCENE</div>
+        <div class="samples" aria-label="Sample scenes"><button data-sample="boulevard">Boulevard</button><button data-sample="pier">Pier</button><button data-sample="street">Street</button><button data-sample="marina">Marina</button></div>
+        <div id="photo-strip" class="photo-strip" aria-label="Loaded photos"></div>
+      </section>
+      <section class="control-section">
+        <h2><span>02</span> Set the scene</h2>
+        <div class="layouts" role="group" aria-label="Cover layout">
+          <button data-layout="collage" aria-pressed="true"><i class="layout-icon collage-icon"></i>Collage</button>
+          <button data-layout="stack" aria-pressed="false"><i class="layout-icon stack-icon"></i>Stack</button>
+          <button data-layout="hero" aria-pressed="false"><i class="layout-icon hero-icon"></i>Hero</button>
+          <button data-layout="duo" aria-pressed="false"><i class="layout-icon duo-icon"></i>Duo</button>
+          <button data-layout="tilt" aria-pressed="false"><i class="layout-icon tilt-icon"></i>Tilt</button>
+        </div>
+        <div class="sample-label">COLOR STORY <span id="grade-name">SUNSET</span></div>
+        <div class="grades" role="group" aria-label="Color grade"><button data-grade="sunset" aria-pressed="true"><i></i>Sunset</button><button data-grade="neon" aria-pressed="false"><i></i>Neon</button><button data-grade="golden" aria-pressed="false"><i></i>Golden</button><button data-grade="vivid" aria-pressed="false"><i></i>Vivid</button></div>
+      </section>
+      <section class="control-section story-section">
+        <h2><span>03</span> Write your story</h2>
+        <label class="field-label" for="caption">COVER TITLE <span id="title-count">10 / 40</span></label><input id="caption" maxlength="40" value="NEON COAST" autocomplete="off">
+        <div class="field-pair"><div><label class="field-label" for="subtitle">SCRIPT SUBTITLE</label><input id="subtitle" maxlength="48" value="vice heat rising"></div><div><label class="field-label" for="sticker">STICKER</label><input id="sticker" maxlength="24" value="VICE HEAT"></div></div>
+        <div class="toggles"><label><input id="ink" type="checkbox" checked><span></span>Ink effect</label><label><input id="stars" type="checkbox" checked><span></span>Stars</label><label><input id="grain" type="checkbox" checked><span></span>Grain</label></div>
+      </section>
+      <section class="control-section fine-section">
+        <h2><span>04</span> Fine-tune</h2>
+        <label class="field-label" for="zoom">PHOTO ZOOM <span id="zoom-value">100%</span></label><input id="zoom" type="range" min="1" max="1.8" step="0.01" value="1">
+        <label class="field-label" for="format">CANVAS FORMAT</label><select id="format"><option value="1920x1080">Landscape — 1920 × 1080</option><option value="1080x1350">Portrait — 1080 × 1350</option><option value="1080x1080">Square — 1080 × 1080</option></select>
+        <button id="export" class="export-button">Export cover <span>↗</span></button>
+        <p class="export-note">FULL-RES PNG · ZERO WATERMARKS</p>
+      </section>
+    </aside>
+    <section class="stage" aria-label="Live cover preview">
+      <div class="stage-top"><span><i></i> LIVE PREVIEW</span><span id="layout-readout">COLLAGE / 01</span></div>
+      <div class="canvas-area"><canvas id="cover" width="1920" height="1080" aria-label="Your Neon Coast cover art"></canvas></div>
+      <div class="stage-bottom"><span id="size-readout">1920 × 1080 · PRINT-READY PNG</span><span class="live-note">All changes live. All yours.</span></div>
+      <div class="stage-signature"><span>DESIGNED FOR THE MAIN CHARACTER.</span><span>NC® &nbsp; / &nbsp; EST. 2026</span></div>
+    </section>
+  </main>
+  <div id="status" class="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

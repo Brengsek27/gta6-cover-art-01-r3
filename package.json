@@ -1,0 +1,12 @@
+{
+  "name": "neon-coast-studio",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve.ts",
+    "capture": "node tools/capture.mjs",
+    "test": "node tools/smoke.mjs",
+    "build": "node main.ts"
+  }
+}
